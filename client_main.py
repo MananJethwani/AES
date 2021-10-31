@@ -68,8 +68,9 @@ def client(s):
 
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 #port 
-port=1025
-s.connect((socket.gethostname(),port))
+port=8081
+host = socket.gethostbyname("localhost")  #Note the extra letters "by"
+s.bind((host, port))
 print("Client And Server are Connected")
 client(s)
 
